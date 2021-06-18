@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>deno online compiler</title>
+    <link
+      rel="shortcut icon"
+      href="https://cdn.discordapp.com/emojis/720816736122961960.gif?v=1"
+      type="image/x-icon"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
+  </head>
+
+  <body>
+    <div align="center">
+      <h1>compile your deno code</h1>
+      <p>note: you only have net perms!</p>
+    </div>
+    <div class="container p-4">
+      <div class="row">
+        <div class="col-md-6 offset-md-3">
+          <div class="card">
+            <div class="card-body">
+              <form
+                name="myForm"
+                action="/code"
+                method="POST"
+                onsubmit="return validateForm()"
+              >
+                <div class="form-group">
+                  <input
+                    type="text"
+                    name="code"
+                    class="form-control"
+                    placeholder="put here yout deno code"
+                    autofocus
+                  />
+                </div>
+                <button class="btn btn-primary btn-block">
+                  execute
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <img src="https://cdn.discordapp.com/emojis/720816736122961960.gif?v=1" />
+  </body>
+</html>
