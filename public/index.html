@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -37,17 +36,17 @@
                 onsubmit="return validateForm()"
               >
                 <div class="form-group">
-                  <input
-                    type="text"
-                    name="code"
+                  <textarea
                     class="form-control"
+                    name="code""
                     placeholder="put here yout deno code"
-                    autofocus
-                  />
+                    rows="10"
+                    required
+                  >
+                    console.log(Deno.version)
+                  </textarea>
                 </div>
-                <button class="btn btn-primary btn-block">
-                  execute
-                </button>
+                <button class="btn btn-primary btn-block">execute</button>
               </form>
             </div>
           </div>

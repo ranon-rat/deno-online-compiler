@@ -14,7 +14,7 @@ router.post("/code", (req, res) => {
     }
   });
   exec(
-    "./deno run --allow-net --no-check execute.ts",
+    "./deno run  --allow-net --no-check execute.ts",
     (error, stdout, stderr) => {
       if (error) {
         console.error(`error: ${error.message}`);
@@ -29,9 +29,9 @@ router.post("/code", (req, res) => {
       console.log(`${stdout}`);
 
       res.write(
-        `<h1 align="center">your output code:</h1> ${stdout}`,
+        `<h1 align="center">your output code:</h1> <p align="center">${stdout}</p>`
       );
-    },
+    }
   );
 });
 
