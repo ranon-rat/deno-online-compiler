@@ -1,4 +1,3 @@
 node_modules
 *.js
-execute.ts
 package-lock.json
