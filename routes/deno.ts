@@ -13,28 +13,25 @@ router.post("/code", (req, res) => {
       console.error(err);
       return;
     }
-  }); // @ts-ignore
-  exec(
-    `./deno run -A --no-check  execute.ts | sed 's/\\x1B\\[[0-9;]\\{1,\\}[A-Za-z]//g'`,
-    (error, stdout, stderr) => {
-      if (error) {
-        console.error(`error: ${error.message}`);
-        return;
-      }
-
-      if (stderr) {
-        console.error(`stderr: ${stderr}`);
-        return;
-      }
-      console.log(stdout);
-
-      res.write(
-        `<h1 align="center">your output code:</h1> <p align="center">${markdown.toHTML(
-          stdout
-        )}</p>`
+  });
+  exec(`./deno run -A --no-check  execute.ts`, (error, stdout, stderr) => {
+    console.log(stdout);
+    let out = markdown
+      .toHTML(stdout || "")
+      .replace(
+        /[\u001b\u009b][[()#;?]*(?:[0-9]{1,4}(?:;[0-9]{0,4})*)?[0-9A-ORZcf-nqry=><]/g,
+        ""
       );
-    }
-  );
+    let err = markdown
+      .toHTML(stderr || "")
+      .replace(
+        /[\u001b\u009b][[()#;?]*(?:[0-9]{1,4}(?:;[0-9]{0,4})*)?[0-9A-ORZcf-nqry=><]/g,
+        ""
+      );
+    res.write(
+      `<div align="center"><h1>your output code:</h1> <p>${out}</p> <h1>possibly error:</h1> ${err} </div>`
+    );
+  });
 });
 
 module.exports = router;
