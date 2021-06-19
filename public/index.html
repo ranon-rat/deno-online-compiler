@@ -16,7 +16,6 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="style.css" />
-    <script src="script.js"></script>
   </head>
 
   <body>
@@ -24,32 +23,23 @@
       <h1>compile your deno code</h1>
       <p>note: you only have net perms!</p>
     </div>
-    <div class="container p-4">
-      <div class="row">
-        <div class="col-md-6 offset-md-3">
-          <div class="card">
-            <div class="card-body">
-              <form
-                name="myForm"
-                action="/code"
-                method="POST"
-                onsubmit="return validateForm()"
+    <div class="container p-6 justify-content-center">
+      <div class="card">
+        <div class="card-body">
+          <form name="myForm" action="/code" method="POST">
+            <div class="form-group">
+              <textarea
+                class="form-control"
+                name="code"
+                placeholder="put here yout deno code"
+                rows="10"
+                required
               >
-                <div class="form-group">
-                  <textarea
-                    class="form-control"
-                    name="code""
-                    placeholder="put here yout deno code"
-                    rows="10"
-                    required
-                  >
-                    console.log(Deno.version)
-                  </textarea>
-                </div>
-                <button class="btn btn-primary btn-block">execute</button>
-              </form>
+console.log(Deno.version)</textarea
+              >
             </div>
-          </div>
+            <button class="btn btn-primary btn-block">execute</button>
+          </form>
         </div>
       </div>
     </div>
