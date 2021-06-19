@@ -2,7 +2,7 @@ const { Router } = require("express");
 const { exec } = require("child_process");
 const router = Router();
 const fs = require("fs");
-const deno = "./deno run -A --no-check  execute.ts";
+const deno = "./deno run --allow-net --no-check  execute.ts";
 
 router.post("/code", (req, res) => {
   const { code } = req.body;
