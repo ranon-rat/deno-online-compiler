@@ -25,9 +25,9 @@ router.post("/code", (req, res) => {
       ""
     );
     if (stderr) {
-      res.write(`<h1 align="center">your error:</h1> <xmp>${err}</xmp> `);
+      res.send(`<h1 align="center">your error:</h1> <xmp>${err}</xmp> `);
     } else {
-      res.write(`<h1 align="center">your output code:</h1> <xmp>${out}</xmp>`);
+      res.send(`<h1 align="center">your output code:</h1> <xmp>${out}</xmp>`);
     }
   });
 });
