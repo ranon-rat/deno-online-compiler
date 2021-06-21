@@ -7,7 +7,13 @@ A simple online compiler for deno
 
 is the 1st version, so its a little bit  shit right now!
 
-thanks to jorge: https://github.com/JorgeArreolaS
+thanks to:  
+
+- jorge https://github.com/JorgeArreolaS
+
+- ranon-rat; https://github.com/ranon-rat
+
+- existentiality: https://github.com/existentiality
 
 <h1>want to run it locally?</h1>
 
