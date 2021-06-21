@@ -19,7 +19,7 @@ thanks to jorge: https://github.com/JorgeArreolaS
 
  <h1>todo</h1>
 
-- a better design
+- add syntax highlighting
 
 </div>
 
