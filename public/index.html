@@ -16,40 +16,45 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
   </head>
 
   <body>
     <div align="center">
       <button id="theme-switcher" class="btn">Switch themes</button>
       <h1>compile your deno code</h1>
-      <p>note: you only have net perms!</p>
+      <p>note: you only have --allow-net flag</p>
     </div>
     <div class="container p-6 justify-content-center">
       <div class="card">
         <div class="card-body">
-          <form name="myForm" action="/code" method="POST">
-            <div class="form-group">
-              <textarea
-                class="form-control"
-                name="code"
-                placeholder="put here your deno code"
-                rows="10"
-                required
-              >
+          <!--code-->
+          <div class="form-group">
+            <textarea
+              class="form-control"
+              name="code"
+              placeholder="put here your deno code"
+              rows="10"
+              id="code"
+              required
+            >
 console.log(Deno.version)</textarea
-              >
-            </div>
-            <button class="btn">execute</button>
-          </form>
+            >
+          </div>
+          <!--button-->
+          <script src="executeTheCode.js"></script>
+          <button class="btn" onclick="sendAndReceive()">execute</button>
         </div>
       </div>
     </div>
+    <!--output-->
+    <pre id="output-code"><code id="output"></code></pre>
+    <!--footer-->
     <img src="https://cdn.discordapp.com/emojis/720816736122961960.gif?v=1" />
     <footer align="center">
       <a href="https://github.com/ELPanaJose/deno-online-compiler"
         >source code of the page</a
       >
     </footer>
-    <script src="script.js"></script>
   </body>
 </html>
