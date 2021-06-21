@@ -64,11 +64,3 @@ body {
   background: var(--background-color);
   color: var(--text-color);
 }
-
-#output-code{
-text-align: left;
-  color:rgb(48, 252, 48);
-  min-height: 30em;
-  width: 40em;
-  background-color: #000;
-}
